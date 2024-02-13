@@ -1,29 +1,23 @@
-# Welcome to my Project Repository!
+#Instructions for Fukushima Daiichi Time Series Modelling Project
 
-This Github repository holds all notable Data Science projects done by me. Each folder holds a separate project, and contains its own README.md file, containing project specific instructions.
+Please read this file to understand how the scripts have been confirgured and in which order the files need to be executed.
 
-The following projects can be currently accessed on this repository:-
-
-1. **Machine Learning Research Project on Queen Bee Acceptance and Presence:** 
-	- This research project can be found in the folder 'Queen_Bee_ML'.
-	- It has been created in Python, using Spyder, an IDE for Python. 
-	- It was done as a part of a dissertation for my masters degree in data science and statistics.
+The project is divided into 3 scripts and are to be executed in the following order:
+1. **Data Wrangling & Processing:** 
+	- This script opens up raw data and completes the first step, that is preprocessing and cleaning the data. 
+	- The raw data is taken from CSV files accessed from [Japan Atomic Energy Agnecy](https://fukushima.jaea.go.jp/en/) (for Radioactivity Data) and [COPEPOD Project](https://www.st.nmfs.noaa.gov/copepod/) (for plankton data). All of this data can also be accessed from the folder **'Data'** within this project's repository tree.
+2. **Harmonic Computation and Time Series Modelling:** 
+	- The environment prepared from running the first script has been stored in a RDS file, and the same has been loaded at the beginning of this file.
+	- This script is responsible for all trigonometric computations and time series models using ARIMA (Autoregressive Integrated Moving Average) technique.
+	- The RDS file has been updated at the end of this script in order to run the next script. The updated environment contains the required models for running the last script.
+3. **Model Comparison and Plots:**
+	- This is the last script in the project, and is followed by the script for modelling. At the beginning of this script, the RDS file responsible for preserving the environment needs to be loaded.
+	- In this script, the models built in the second script have been compared and the results have been visualised. This script would be helpful for building reports when necessary.
 	
-2. **Hierarchical Linear Modelling on Spotify's Audio Features:**
-	- This project can be found in the folder 'Spotify_HLM'.
-	- It has been created using R in Studio.
+**Note:** Your R installation may or may not have the packages required for running the scripts. In case the packages do not exist they need to be installed using this syntax:
+install.packages('package')
 
-3. **Time Series Modelling on Fukushima Daiichi Nuclear Fallout Data:**
-	- This project can be found in the folder 'Fukushima_Daiichi_TS'
-	- It has been created using R in Studio.
-	
-**Other:** This folder contains miscellaneous scripts that are not necessarily projects but may be helpful. At present it contains:
-1. Instructions for Bulk Installation of R libraries.
-
-The following software may be required for replicating or executing the projects within this repository:
-1. R (Base)
+Software required for this project:
+1. R (base)
 2. R Studio
-3. Python (Base)
-4. Anaconda
-5. Spyder
-6. Git
+3. Git (Optional for version control)
